@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
  * The record contains information about the client identifiers, the currency type,
  * the ammount, and the time of the transaction.
  *
- * @param id:             the identifier of the transaction.
  * @param producerUuid:   the identifier of the producer client.
  * @param consumerUuid:   the identifier of the consumer client.
  * @param currency:       the currency used in the transaction.
@@ -18,7 +17,6 @@ import java.time.LocalDateTime;
  * @author adrian.nilsson.coding@gmail.com
  * */
 public record TransactionRecord(
-    Long id,
     String producerUuid,
     String consumerUuid,
     String currency,
