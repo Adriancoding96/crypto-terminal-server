@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
  * @since 0.1
  * @author adrian.nilsson.coding@gmail.com
  * */
-public record Transaction(
+public record TransactionRecord(
     Long id,
     String producerUuid,
     String consumerUuid,
