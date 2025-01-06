@@ -2,6 +2,7 @@ package com.adrian.crypto_terminal_server;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.time.LocalDateTime;
 import java.time.Month;
@@ -61,10 +62,21 @@ public class TransactionMapperTests {
 
     assertNotNull(transaction);
     assertEquals("produceruuid", transaction.getProducerUuid());
-    assertEquals("consumeruuid", transaction.getProducerUuid());
+    assertEquals("consumeruuid", transaction.getConsumerUuid());
     assertEquals("bitcoin", transaction.getCurrency());
     assertEquals(2.4D, transaction.getAmount());
     assertEquals(EXAMPLE_DATE_TIME, transaction.getTime());
+  }
+
+  /*
+   * Test to verify that toTransaction method throws
+   * IllegalArgumentExeption if TransactionRecord is null.
+   * */
+  @Test
+  void assertTestToTransaction_ThrowsIllegalArgumentException() {
+    assertThrows(IllegalArgumentException.class, () -> 
+      mapper.toTransaction(null)
+    );  
   }
 
   /*
@@ -92,7 +104,18 @@ public class TransactionMapperTests {
     assertEquals("bitcoin", record.currency());
     assertEquals(2.4D, record.amount());
     assertEquals(EXAMPLE_DATE_TIME, record.time());
-
   }
+
+  /*
+   * Test to verify that toRecord method throws
+   * IlleagalArgumentException if Transaction is null.
+   * */
+  @Test
+  void assertTestToRecord_ThrowsIllegalArgumentException() {
+    assertThrows(IllegalArgumentException.class, () -> 
+      mapper.toRecord(null)
+    );  
+  }
+
   
 }
