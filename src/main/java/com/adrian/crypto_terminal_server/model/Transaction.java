@@ -7,6 +7,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,10 +36,21 @@ import lombok.Setter;
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty("id")
     private Long id;
+
+    @JsonProperty("producerUuid")
     private String producerUuid;
+
+    @JsonProperty("consumerUuid")
     private String consumerUuid;
+
+    @JsonProperty("currency")
     private String currency;
+
+    @JsonProperty("amount")
     private Double amount;
+
+    @JsonProperty("time")
     private LocalDateTime time;
 }
