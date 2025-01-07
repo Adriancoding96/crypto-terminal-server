@@ -54,6 +54,8 @@ public class TransactionMapper {
         transaction.getConsumerUuid(),
         transaction.getCurrency(),
         transaction.getAmount(),
-        transaction.getTime());
+        transaction.getTime(),
+        null,
+        null);
   }
 }

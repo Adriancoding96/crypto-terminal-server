@@ -21,7 +21,7 @@ public class RabbitTestController {
 
   @PostMapping
   public void testRabbitMQ() {
-    transactionService.sendNewTransaction(new TransactionRecord(null, null, null, null, null));
+    transactionService.sendNewTransaction(new TransactionRecord(null, null, null, null, null, null, null));
   }
   
 }

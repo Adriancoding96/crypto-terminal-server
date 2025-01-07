@@ -16,7 +16,7 @@ import lombok.Setter;
 
 /*
  * Model of finanical transaction between an producer client and an consumer client.
- * The record contains information about the client identifiers, the currency type,
+ * The class contains information about the client identifiers, the currency type,
  * the ammount, and the time of the transaction.
  *
  * @param id:             the identifier of the transaction.

@@ -55,7 +55,9 @@ public class TransactionMapperTests {
       "consumeruuid",
       "bitcoin",
       2.4D,
-      EXAMPLE_DATE_TIME
+      EXAMPLE_DATE_TIME,
+      "producer@exaple.com",
+      "consumer@example.com"
     );
     
     Transaction transaction = mapper.toTransaction(record);
@@ -72,6 +74,7 @@ public class TransactionMapperTests {
    * Test to verify that toTransaction method throws
    * IllegalArgumentExeption if TransactionRecord is null.
    * */
+  @DisplayName("toTransaction throws IllegalArgumentException if record is null")
   @Test
   void assertTestToTransaction_ThrowsIllegalArgumentException() {
     assertThrows(IllegalArgumentException.class, () -> 
@@ -110,6 +113,7 @@ public class TransactionMapperTests {
    * Test to verify that toRecord method throws
    * IlleagalArgumentException if Transaction is null.
    * */
+  @DisplayName("toRecord throws IllegalArgumentException if transacation is null")
   @Test
   void assertTestToRecord_ThrowsIllegalArgumentException() {
     assertThrows(IllegalArgumentException.class, () -> 

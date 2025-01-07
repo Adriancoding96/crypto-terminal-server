@@ -12,6 +12,9 @@ import java.time.LocalDateTime;
  * @param consumerUuid:   the identifier of the consumer client.
  * @param currency:       the currency used in the transaction.
  * @param ammount:        the amount involved in the transaction.
+ * @param time:           the amount involved in the transaction.
+ * @param producerEmail:  the amount involved in the transaction.
+ * @param consumerEmail:  the amount involved in the transaction.
  * 
  * @since 0.1
  * @author adrian.nilsson.coding@gmail.com
@@ -21,5 +24,7 @@ public record TransactionRecord(
     String consumerUuid,
     String currency,
     Double amount,
-    LocalDateTime time
+    LocalDateTime time,
+    String producerEmail,
+    String consumerEmail
 ) {}
