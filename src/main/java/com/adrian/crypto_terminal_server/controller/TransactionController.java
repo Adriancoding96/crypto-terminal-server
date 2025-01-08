@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/transaciton")
+@RequestMapping("/api/transaction")
 public class TransactionController {
 
  
   @PostMapping("/new")
   public ResponseEntity<Void> sendNewTransaction(@RequestBody TransactionRecord record) {
-    return null;
+    return ResponseEntity.ok().build();
   }
+
 }
